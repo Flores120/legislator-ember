@@ -20,7 +20,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.myApiKey = process.env.apiKey;
+     ENV.myApiKey = process.env.apiKey;
   }
 
   if (environment === 'test') {

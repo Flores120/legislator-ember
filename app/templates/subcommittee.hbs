@@ -1,0 +1,10 @@
+
+{{#if model}}
+  <ul>
+    {{#each model as |committy|}}
+    <li> {{committy.name}} </li>
+    {{/each}}
+  </ul>
+  {{else}}
+  No subcommittes
+{{/if}}

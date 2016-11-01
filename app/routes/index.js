@@ -6,5 +6,6 @@ export default Ember.Route.extend({
     zipLookup(params) {
       this.transitionTo('results', params.zip);
     }
+
   }
 });

@@ -4,8 +4,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(params) {
     var key = config.myApiKey;
-    console.log(params.chamber + " Chamber value") ;
-    console.log(params.zip + " Zip Code value") ;
+
     var url = 'http://congress.api.sunlightfoundation.com/legislators/locate?apikey=' +key+ '&zip=' +params.zip;
     var url2 = 'http://congress.api.sunlightfoundation.com/committees?chamber=house&subcommittee=false&apikey=' +key;
     var url3 = 'http://congress.api.sunlightfoundation.com/committees?chamber=senate&subcommittee=false&apikey=' +key;
@@ -24,5 +23,11 @@ export default Ember.Route.extend({
         return responseJSON.results;
       }),
     });
+  },
+  actions:{
+    goToSub(params){
+      console.log("testing this")
+       this.transitionTo('subcommittee',params);
+    }
   }
 });
