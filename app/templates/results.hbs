@@ -1,5 +1,13 @@
 <ul>
-  {{#each model as |legislator|}}
-    <li> {{legislator.first_name}} {{legislator.last_name}}<br>Contact: <a href=  {{legislator.contact_form}}>{{legislator.contact_form}}</a></li>
+  {{#each model.legislators as |legislator|}}
+    <li> {{legislator.first_name}} {{legislator.last_name}}<br>Contact: <a href=  {{legislator.contact_form}}>{{legislator.contact_form}}</a><a href="https://twitter.com/{{legislator.twitter_id}}"> Twitter:@{{legislator.twitter_id}}</a></li>
   {{/each}}
 </ul>
+
+<ul>
+  {{#each model.committees as |committy|}}
+    <li> {{committy.name}} {{legislator.last_name}}<br>Contact: <a href=  {{legislator.contact_form}}>{{legislator.contact_form}}</a><a href="https://twitter.com/{{legislator.twitter_id}}"> Twitter:@{{legislator.twitter_id}}</a></li>
+  {{/each}}
+</ul>
+
+{{committees}}
